@@ -26,6 +26,8 @@ var trentinoLat=46.3788459;
 var trentinoLong= 10.3085097;
 var romagnaLat=44.4123367;
 var roamgnaLong= 12.1654897;
+var sardegnaLat=40.0583216;
+var sardegnaLong= 8.8576609;
 
 
 
@@ -75,6 +77,7 @@ function draw() {
   var pointtrento = myMap.latLngToPixel(trentinoLat,trentinoLong);
   var pointabruzz = myMap.latLngToPixel(abruzzoLat,abruzzoLong);
   var pointromagna = myMap.latLngToPixel(romagnaLat,roamgnaLong);
+  var pointsardegna = myMap.latLngToPixel(sardegnaLat,sardegnaLong);
   noStroke();
   fill(255,0,0,0);
     ellipse(pointlomb.x,pointlomb.y,90);
@@ -88,6 +91,7 @@ function draw() {
             ellipse(pointtrento.x,pointtrento.y,90);
             ellipse(pointabruzz.x,pointabruzz.y,90);
             ellipse(pointromagna.x,pointromagna.y,90);
+            ellipse(pointsardegna.x,pointsardegna.y,90);
             point(mouseX,mouseY);
 
 	hitlomb = collidePointCircle(mouseX,mouseY,pointlomb.x,pointlomb.y,90)
@@ -101,6 +105,7 @@ function draw() {
   hittrent = collidePointCircle(mouseX,mouseY,pointtrento.x,pointtrento.y,90)
   hitabruzz = collidePointCircle(mouseX,mouseY,pointabruzz.x,pointabruzz.y,90)
   hitromagna = collidePointCircle(mouseX,mouseY,pointromagna.x,pointromagna.y,90)
+    hitsardegna = collidePointCircle(mouseX,mouseY,pointsardegna.x,pointsardegna.y,90)
   if(hitlomb == true){
     fill(255);
     textSize(50);
@@ -155,6 +160,11 @@ function draw() {
     fill(255);
     textSize(50);
   text(' ue tabac! ',mouseX,mouseY);
+  }
+  if(hitsardegna == true){
+    fill(255);
+    textSize(50);
+  text(' ajo ',mouseX,mouseY);
   }
 fill(255);
 textSize(70)
